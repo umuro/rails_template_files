@@ -1,0 +1,1 @@
+Place tasks that might be configured per application here.
