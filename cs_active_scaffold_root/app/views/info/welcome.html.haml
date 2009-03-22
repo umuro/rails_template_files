@@ -6,6 +6,19 @@ You are have at your disposal:
   %li cs_active_scaffold generator
   %li ActiveScaffold
   %li HAML
-  %li SASS
+  %li SASS: Application Frame and Boxed Menus
 
-script/generate cs_active_scaffold YourModel property:type ...
+%h2 Tips
+%dl
+  %dt
+    %i Generate your models quickly:
+  %dd
+    %code script/generate cs_active_scaffold YourModel property:type ...
+  %dt
+    %i Then migrate to database:
+  %dd
+    %code rake db:migrate
+  %dt
+    %i Start your server:
+  %dd
+    %code script/server
