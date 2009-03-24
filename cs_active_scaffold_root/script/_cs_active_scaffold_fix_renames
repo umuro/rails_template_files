@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+
+unless File.exists?('public/stylesheets/sass/cs')
+FileUtils.mkdir 'public/stylesheets/sass/cs'
+%w(public/stylesheets/sass/application_layout.sass  public/stylesheets/sass/box.sass  public/stylesheets/sass/common.sass  public/stylesheets/sass/controller_layout.sass  public/stylesheets/sass/reset_css.sass).each do |filename|
+	FileUtils.mv filename, 'public/stylesheets/sass/cs'
+  end
+end
+
+unless File.exists?('app/views/cs_global')
+  FileUtils.mv 'app/views/global', 'app/views/cs_global'
+end
+
+unless File.exists?('README.markdown')
+  FileUtils.cp 'README', 'README.markdown'
+  FileUtils.mv 'README', 'RAILS_README'
+end
