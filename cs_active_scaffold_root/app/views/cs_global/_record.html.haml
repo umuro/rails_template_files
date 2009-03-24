@@ -1,7 +1,12 @@
 :ruby
-  i = image_tag record.to_icon, :size=>'32x32'
-  l = record.to_label
-  t = link_to "#{i} #{l}", :action=>'show', :id=>record.id
+  if record.respond_to? :to_icon
+    i = image_tag record.to_icon, :size=>'32x32'
+    l = record.to_label
+    title = "#{i} #{l}"
+  else
+    title = record.to_label
+  end
+  t = link_to title, :action=>'show', :id=>record.id
 = t
 
 //= link_to :controller=>:people, :action=>'show', :id=>record.id do
