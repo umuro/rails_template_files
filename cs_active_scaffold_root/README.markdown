@@ -17,7 +17,7 @@ If you set the wrong password for deployer
     psql
         ALTER ROLE deployer WITH PASSWORD sharedpass;
 
-## Install project plugins and gems
+Install project plugins and gems
 -----------------------------------
     cd <ProjectRoot>
     sudo rake gems:install
@@ -30,3 +30,8 @@ Prepare the data
     rake db:create:all
     rake db:migrate
     rake db:populate
+
+Update later
+============
+git pull
+git submodule update
